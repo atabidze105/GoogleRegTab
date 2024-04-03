@@ -1,0 +1,163 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1000"
+	x:Class="GoogleRegTab.MainWindow"
+	WindowState="Maximized"
+	Background="#f0f4f9"
+	Title="GoogleRegTab">
+	<Window.Styles>
+		<Style Selector="Button.Button1 /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="#0b57d0"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Button.Button1:hovered /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="#2763d0"/>
+			<Setter Property="Background" Value="#2763d0"/>
+		</Style>
+		<Style Selector="Button.Button1:pressed /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="#0b57d2"/>
+			<Setter Property="Background" Value="#e6eefa"/>
+		</Style>
+		<Style Selector="Button.Button2 /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="White"/>
+			<Setter Property="Background" Value="#0b57d0"/>
+		</Style>
+		<Style Selector="Button.Button2:hovered /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="#2763d0"/>
+			<Setter Property="Background" Value="#2763d0"/>
+		</Style>
+		<Style Selector="Button.Button2:pressed /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="#e6eefa"/>
+			<Setter Property="Background" Value="#0b57d2"/>
+		</Style>
+		<Style Selector="Button.Button3 /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="Black"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Button.Button3:hovered /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="Black"/>
+			<Setter Property="Background" Value="#e2e7eb"/>
+		</Style>
+		<Style Selector="Button.Button3:pressed /template/ ContentPresenter">
+			<Setter Property="TextBlock.Foreground" Value="Black"/>
+			<Setter Property="Background" Value="#dfe2e7"/>
+		</Style>
+	</Window.Styles>
+	<Grid
+		RowDefinitions="*,*,*"
+		ColumnDefinitions="*,*,*,*">
+		<Border
+			Grid.Column="1" Grid.Row="1"
+			Grid.ColumnSpan="2"
+			Background="White"
+			CornerRadius="25">
+			<Grid
+				ColumnDefinitions="*,*"
+				RowDefinitions="*,*,*,*">
+				<Image
+					Source="/Assets/google-logo.png"
+					Height="50" Margin="25 0"
+					HorizontalAlignment="Left"/>
+				<TextBlock
+					Text="Вход" Margin="25 0"
+					FontSize="40"
+					Grid.Row="1"/>
+				<TextBlock
+					Text="Перейти в Gmail" Margin="25 10"
+					VerticalAlignment="Bottom"
+					Grid.Row="1"/>
+				<TextBox					
+					Watermark="Телефон или адрес эл. почты"
+					VerticalContentAlignment="Center"
+					BorderBrush="Black"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Left"
+					Height="55" Width="460"
+					Grid.Column="1" Grid.Row="1"/>
+				<Button
+					Classes="Button1"
+					Content="Забыли адрес электронной почты?"
+					FontWeight="DemiBold"
+					VerticalAlignment="Bottom"
+					Grid.Column="1" Grid.Row="1"/>
+				<TextBlock
+					Text="Работаете на чужом компьютере? Включите гостевой режим."
+					Grid.Column="1" Grid.Row="2"
+					FontSize="15"
+					Margin="10"
+					TextWrapping="Wrap"
+					VerticalAlignment="Center"/>
+				<Button
+					Classes="Button1"
+					Content="Подробнее об использовании гостевого режима"
+					FontWeight="DemiBold"
+					VerticalAlignment="Bottom"
+					Grid.Column="1" Grid.Row="2"/>
+				<StackPanel
+					Orientation="Horizontal"
+					Grid.Column="1" Grid.Row="3"
+					Margin="20"
+					VerticalAlignment="Bottom"
+					HorizontalAlignment="Right">
+					<Button
+						Content="Создать аккаунт"
+						Classes="Button1"
+						Margin="10 0"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Height="40" Width="145"
+						CornerRadius="50"/>
+					<Button
+						Content="Далее"
+						Classes="Button2"
+						Margin="10 0"
+						VerticalContentAlignment="Center"
+						HorizontalContentAlignment="Center"
+						Height="40" Width="90"
+						CornerRadius="50"/>
+				</StackPanel>
+			</Grid>
+		</Border>
+		<ComboBox
+			Grid.Row="3" Grid.Column="1"
+			SelectedIndex="0"
+			Height="30" Width="200"
+			Margin="10"
+			Background="Transparent"
+			BorderBrush="Transparent">
+			<ComboBoxItem
+				Content="Русский"/>
+			<ComboBoxItem
+				Content="English"/>
+			<ComboBoxItem
+				Content="繁體中文"/>
+		</ComboBox>
+		<StackPanel
+			Orientation="Horizontal"
+			VerticalAlignment="Top"
+			HorizontalAlignment="Right"
+			Grid.Row="3" Grid.Column="2">
+			<Button
+				Classes="Button3"
+				Content="Справка"
+				CornerRadius="5"
+				FontSize="11"
+				Margin="10"/>
+			<Button
+				Classes="Button3"
+				Content="Конфиденциальность"
+				CornerRadius="5"
+				FontSize="11"
+				Margin="10"/>
+			<Button
+				Classes="Button3"
+				Content="Условия"
+				CornerRadius="5"
+				FontSize="11"
+				Margin="10"/>
+		</StackPanel>
+	</Grid>
+</Window>
